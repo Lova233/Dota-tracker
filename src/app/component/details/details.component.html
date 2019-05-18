@@ -1,8 +1,10 @@
-<form class="details-form">
+<form class="details-form" (ngSubmit)="onSubmit(param)" *ngIf="!playerData">
   <img  class="details-logo" src="assets/dota-2.svg">
   <mat-form-field>
       <mat-label>your player number</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" [(ngModel)]="param" name="param">
   </mat-form-field>
-  <button mat-raised-button (click)="onSubmit()">Submit&nbsp;&nbsp;&nbsp;<i class="material-icons">done</i></button>
+  <button mat-raised-button  type="submit">Submit&nbsp;&nbsp;&nbsp;<i class="material-icons">done</i></button>
 </form>
+<app-results *ngIf="playerData" [playerData]="playerData" [playerWl]="playerWl"></app-results>
+

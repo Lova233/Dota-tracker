@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-results',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
+  @Input() playerData:any;
+  @Input() playerWl:any;
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      console.log(this.playerData,this.playerWl)
+    }, 3000);
   }
 
 }
