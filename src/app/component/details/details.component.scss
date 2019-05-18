@@ -1,6 +1,5 @@
 .details-form{
-  width: 250px;
-  height: 250px;
+  width: 300px;
   padding: 20px;
   background-color: white;
   display: flex;
@@ -13,10 +12,53 @@
   border-radius: 10px;
 }
 
+form{
+  width: 100%;
+}
+
 .details-logo{
   width: 70px;
 }
 
 mat-form-field{
   width: 100%;
+}
+
+.error{
+  height: 12px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  color: red;
+  font-size: 12px;
+}
+
+mat-spinner{
+  top: 46%;
+  left: 44%;
+  position: fixed;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+}
+
+.disable{
+  cursor: not-allowed;
+}
+
+.disable:hover{
+  background-color: lightgray!important;
+}
+
+.details-text{
+  font-weight: 400;
+}
+
+
+.details-prechoice{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

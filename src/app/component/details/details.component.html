@@ -1,10 +1,29 @@
-<form class="details-form" (ngSubmit)="onSubmit(param)" *ngIf="!playerData">
+<div class="details-form" *ngIf="!isShown">
+<form  >
   <img  class="details-logo" src="assets/dota-2.svg">
+  <h2 class="details-title">check your stats</h2>
   <mat-form-field>
       <mat-label>your player number</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="param" name="param">
   </mat-form-field>
-  <button mat-raised-button  type="submit">Submit&nbsp;&nbsp;&nbsp;<i class="material-icons">done</i></button>
+  <p class="error" *ngIf="!param">{{error}}</p>
+  <div class="details-prechoice">
+    <button mat-raised-button (click)="onSubmit(param)" [ngClass]="{'disable': !param }">Submit&nbsp;&nbsp;&nbsp;<i class="material-icons">done</i></button>
+    <button mat-raised-button (click)="clear()">Clear&nbsp;&nbsp;&nbsp;<i class="material-icons">close</i></button>
+  </div>
+  <div class="details-prechoice">
+      <h3 class="details-text">or choose pro player</h3>
+      <i class="material-icons">refresh</i>
+  </div>
 </form>
-<app-results *ngIf="playerData" [playerData]="playerData" [playerWl]="playerWl"></app-results>
+  <div class="details-prechoice">
+      <button mat-raised-button  (click)="proPlayer('70388657')">Dendi</button>
+      <button mat-raised-button  (click)="proPlayer('101356886')">Liquid.gh</button>
+      <button mat-raised-button  (click)="proPlayer('19672354')">OG.N0tail</button>
+  </div>
+</div>
+{{playerData}}
+<mat-spinner *ngIf="isLoading && !playerData"></mat-spinner>
+
+<app-results *ngIf="isShown" [playerMatches]="playerMatches$ | async" [playerData]="playerData$ | async" [playerWl]="playerWl$ | async"  (closeDetails)="onClose($event)"></app-results>
 

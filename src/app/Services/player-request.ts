@@ -19,10 +19,15 @@ export class PlayerService {
 
 
   getPlayerData(param):any{
-    return this.http.get("https://api.opendota.com/api/players/"+ param)
+    console.log('https://api.opendota.com/api/players/' + param);
+    return this.http.get('https://api.opendota.com/api/players/' + param );
   }
 
   getWinLose(param):any{
-    return this.http.get("https://api.opendota.com/api/players/"+ param + "/wl")
+    return this.http.get('https://api.opendota.com/api/players/' + param + '/wl');
+  }
+
+  getRecentMatches(param):any{
+    return this.http.get('https://api.opendota.com/api/players/' + param + '/recentMatches');
   }
 }

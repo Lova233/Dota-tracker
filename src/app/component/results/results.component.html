@@ -2,11 +2,14 @@
   <article class="result-article">
       <img [src]="playerData.profile.avatarfull">
     <div class="article-heading">
+        <i class="material-icons close" (click)="close()">close</i>
       <h2><i class="material-icons">person</i>&nbsp;{{playerData.profile.personaname}}</h2>
-      <ul>
-        <li><h3>win:&nbsp;{{playerWl.win}}</h3></li>
-        <li><h3>lose:&nbsp;{{playerWl.lose}}</h3></li>
-      </ul>
+      <div class="details-grid">
+        <h3>win:&nbsp;<strong>{{playerWl.win}}</strong></h3>
+        <h3>lose:&nbsp;<strong>{{playerWl.lose}}</strong></h3>
+        <h3>last in:&nbsp;<strong>{{playerData.profile.last_login == null ? 'Not Available' : playerData.profile.last_login | date: "shortDate"}}</strong></h3>
+        <h3>mmr:&nbsp;<strong>{{playerData.mmr_estimate.estimate}}</strong></h3>
+      </div>
     </div>
   </article>
 </section>
