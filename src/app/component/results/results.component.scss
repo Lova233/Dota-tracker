@@ -1,7 +1,40 @@
 .result-section{
-  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction:column;
   justify-content: center;
   align-items: center;
+}
+
+.result-article{
+  width: 600px;
+  height: 400px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 3fr;
+  background-color: white;
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+.article-heading{
+  padding: 20px;
+  border-bottom: 1px solid;
+}
+
+.material-icons{
+  font-size: 40px;
+}
+
+
+h2{
+  display: flex;
+  align-items: center;
+}
+
+
+h3{
+  line-height: 30px;
+  font-weight: 400;
 }

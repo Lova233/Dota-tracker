@@ -1,5 +1,12 @@
 <section class="result-section">
-  <img [src]="playerData.profile.avatarfull">
-  <h2>{{playerData.profile.personaname}}</h2>
-  <h3>win:{{playerWl.win}}  lose:{{playerWl.lose}}</h3>
+  <article class="result-article">
+      <img [src]="playerData.profile.avatarfull">
+    <div class="article-heading">
+      <h2><i class="material-icons">person</i>&nbsp;{{playerData.profile.personaname}}</h2>
+      <ul>
+        <li><h3>win:&nbsp;{{playerWl.win}}</h3></li>
+        <li><h3>lose:&nbsp;{{playerWl.lose}}</h3></li>
+      </ul>
+    </div>
+  </article>
 </section>
